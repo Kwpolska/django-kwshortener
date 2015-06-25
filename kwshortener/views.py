@@ -1,6 +1,7 @@
 from django.shortcuts import render
-from django.http import HttpResponse, HttpResponseNotFound, HttpResponseRedirect
+from django.http import HttpResponseNotFound, HttpResponseRedirect
 from .models import Link
+import operator
 
 def index(request):
     if 'l' in request.GET:
@@ -8,7 +9,7 @@ def index(request):
             'pid': 'listing',
             'title': 'Listing',
             'htmltitle': 'Listing | go.chriswarrick.com',
-            'urls': Link.objects.order_by('slug')
+            'urls': filter(operator.attrgetter('visible'), Link.objects.order_by('slug')),
         }
         return render(request, 'kwshortener/listing.html', context)
     else:

@@ -5,6 +5,7 @@ class Link(models.Model):
     title = models.CharField("Title", max_length=500)
     slug = models.SlugField("Slug", max_length=50)
     url = models.URLField("URL", max_length=500)
+    visible = models.BooleanField("Visible", default=True)
 
     def clickable_title(self):
         return format_html('<a href="{0}">{1}</a>', '/' + self.slug, self.title)
