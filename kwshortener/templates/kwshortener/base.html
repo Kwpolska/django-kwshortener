@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{ htmltitle }}</title>
+
+<!-- Bootstrap -->
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+<link href="https://chriswarrick.com/assets/css/all.css" rel="stylesheet" type="text/css">
+
+</head>
+<body>
+<a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
+
+<nav class="navbar navbar-kw navbar-static-top" role="navigation">
+    <div class="container">
+
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle"
+                data-toggle="collapse" data-target=".navbar-kw-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">
+                <img src="https://chriswarrick.com/assets/img/logo.png" alt="go.chriswarrick.com" id="logo"><span id="blog-title">go.chriswarrick.com</span>
+            </a>
+        </div>
+        <div class="collapse navbar-collapse navbar-kw-collapse">
+        <ul class="nav navbar-nav">
+            <li{% if pid == 'listing' %} class="active"{% endif %}>
+            <a href="/?l"><i class="fa fa-database"></i> Listing</a>
+            </li>
+            <li>
+            <a href="http://chriswarrick.com/"><i class="fa fa-home"></i> Blog</a>
+            </li>
+        </ul>
+        </div>
+    </div>
+
+</nav>
+<div class="container">
+    <h1>{{ title }}</h1>
+    {% block content %}{% endblock %}
+    <footer class="site-footer">
+        <footer class="site-footer"><p><a href="cookies/">this site uses
+                cookies.</a><br>by using this site, you agree to our
+            cookie&nbsp;policy.</p>
+            <p>
+            powered by <strong><a
+                    href="https://djangoproject.com/">Django</a></strong>, <a
+                href="http://nginx.org/">nginx</a> and <a
+                href="https://www.digitalocean.com/?refcode=7983689b2ecc">DigitalOcean</a><br>
+            copyright&nbsp;©&nbsp;2009–2015&nbsp;<a href="contact/">Chris
+                Warrick</a><br><a rel="license"
+                href="http://creativecommons.org/licenses/by-nc-nd/3.0/">CC
+                BY-NC-ND</a>, unless stated&nbsp;otherwise</p>
+        </footer>
+</div>
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="js/bootstrap.min.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script><script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script><script src="https://chriswarrick.com/assets/js/all.js"></script>
+</body>
+</html>
