@@ -23,7 +23,7 @@ def index(request):
 def go(request, slug):
     try:
         link = Link.objects.get(slug=slug)
-        return HttpResponseRedirect(link.url)
+        return HttpResponseRedirect(link.url, '<h1>302 Found</h1>\n<a href="{0}">{0}</a>\n'.format(link.url))
     except Link.DoesNotExist:
         context = {
             'pid': '404',
