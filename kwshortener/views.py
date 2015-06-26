@@ -3,6 +3,7 @@ from django.http import HttpResponseNotFound, HttpResponseRedirect
 from .models import Link
 import operator
 
+
 def index(request):
     if 'l' in request.GET:
         context = {
@@ -19,6 +20,7 @@ def index(request):
             'htmltitle': 'go.chriswarrick.com',
         }
         return render(request, 'kwshortener/index.html', context)
+
 
 def go(request, slug):
     try:

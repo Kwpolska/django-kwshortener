@@ -1,6 +1,7 @@
 from django.db import models
 from django.utils.html import format_html
 
+
 class Link(models.Model):
     title = models.CharField("Title", max_length=500)
     slug = models.SlugField("Slug", max_length=50)
@@ -22,10 +23,8 @@ class Link(models.Model):
     def clickable_url(self):
         return format_html('<a href="{0}">{0}</a>', self.url)
 
-
     clickable_url.short_description = 'URL'
     clickable_url = property(clickable_url)
-
 
     def __str__(self):
         return self.title

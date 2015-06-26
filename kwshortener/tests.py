@@ -1,3 +1,4 @@
-from django.test import TestCase
+#from django.test import TestCase
 
-# Create your tests here.
+# Too lazy to create my tests here.
+# Not that there is a lot to test in this app.
