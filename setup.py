@@ -7,7 +7,7 @@ with open('requirements.txt', 'r') as fh:
     dependencies = [l.strip() for l in fh]
 
 setup(name='django-kwshortener',
-      version='0.1.0',
+      version='0.1.1',
       description='Yet another URL shortener',
       keywords='django,url,shortener',
       author='Chris Warrick',
