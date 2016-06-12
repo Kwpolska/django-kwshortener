@@ -3,11 +3,8 @@
 import io
 from setuptools import setup
 
-with open('requirements.txt', 'r') as fh:
-    dependencies = [l.strip() for l in fh]
-
 setup(name='django-kwshortener',
-      version='0.1.1',
+      version='0.1.2',
       description='Yet another URL shortener',
       keywords='django,url,shortener',
       author='Chris Warrick',
@@ -22,7 +19,7 @@ setup(name='django-kwshortener',
                    'Programming Language :: Python',
                    'Programming Language :: Python :: 3'],
       packages=['kwshortener'],
-      install_requires=dependencies,
+      install_requires=['Django'],
       #requires=['stuff'],
       #data_files=[('file', ['dest']),],
       #entry_points={
