@@ -7,7 +7,7 @@ import operator
 def index(request):
     if 'l' in request.GET:
         sort_clicks = 'sort_clicks' in request.GET
-        ordering = ('clicks', 'slug', 'title') if sort_clicks else ('slug', 'title', 'clicks')
+        ordering = ('-clicks', 'slug', 'title') if sort_clicks else ('slug', 'title', '-clicks')
 
         context = {
             'pid': 'listing',

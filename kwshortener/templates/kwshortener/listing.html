@@ -6,7 +6,7 @@
             <th>Title</th>
             <th>Slug</th>
             <th>URL</th>
-            <th>Clicks
+            <th style="min-width: 6em;">Clicks
             {% if sort_clicks %}
             <a href="?l"><i class="fa fa-sort-desc"></i></a>
             {% else %}
@@ -19,7 +19,7 @@
     {% for url in urls %}
     <tr>
         <td>{{ url.clickable_title }}</td>
-        <td>{{ url.clickable_slug }}</td>
+        <td style="white-space: nowrap;">{{ url.clickable_slug }}</td>
         <td>{{ url.clickable_url }}</td>
         <td>{{ url.clicks }}</td>
     </tr>
