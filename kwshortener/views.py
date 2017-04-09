@@ -6,11 +6,15 @@ import operator
 
 def index(request):
     if 'l' in request.GET:
+        sort_clicks = 'sort_clicks' in request.GET
+        ordering = ('clicks', 'slug', 'title') if sort_clicks else ('slug', 'title', 'clicks')
+
         context = {
             'pid': 'listing',
             'title': 'Listing',
             'htmltitle': 'Listing | go.chriswarrick.com',
-            'urls': filter(operator.attrgetter('visible'), Link.objects.order_by('slug')),
+            'urls': filter(operator.attrgetter('visible'), Link.objects.order_by(*ordering)),
+            'sort_clicks': sort_clicks,
         }
         return render(request, 'kwshortener/listing.html', context)
     else:

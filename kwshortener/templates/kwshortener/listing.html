@@ -6,7 +6,13 @@
             <th>Title</th>
             <th>Slug</th>
             <th>URL</th>
-            <th>Clicks</th>
+            <th>Clicks
+            {% if sort_clicks %}
+            <a href="?l"><i class="fa fa-sort-desc"></i></a>
+            {% else %}
+            <a href="?l&sort_clicks"><i class="fa fa-sort"></i></a>
+            {% endif %}
+            </th>
         </tr>
     </thead>
     <tbody>
