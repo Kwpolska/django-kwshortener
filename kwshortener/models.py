@@ -9,6 +9,11 @@ class Link(models.Model):
     visible = models.BooleanField("Visible", default=True)
     clicks = models.IntegerField("Clicks", default=0)
 
+    class Meta:
+        indexes = [
+            models.Index(fields=['slug'])
+        ]
+
     def clickable_title(self):
         return format_html('<a href="{0}">{1}</a>', '/' + self.slug, self.title)
 

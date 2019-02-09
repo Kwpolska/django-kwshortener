@@ -4,7 +4,7 @@ import io
 from setuptools import setup
 
 setup(name='django-kwshortener',
-      version='0.1.2',
+      version='0.1.3',
       description='Yet another URL shortener',
       keywords='django,url,shortener',
       author='Chris Warrick',
