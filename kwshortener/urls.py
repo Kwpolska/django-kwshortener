@@ -1,7 +1,7 @@
-from django.conf.urls import url
+from django.urls import re_path
 from . import views
 
 urlpatterns = [
-    url(r'^$', views.index, name='index'),
-    url(r'^(?P<slug>.*?)/?$', views.go, name='go'),
+    re_path(r'^$', views.index, name='index'),
+    re_path(r'^(?P<slug>.*?)/?$', views.go, name='go'),
 ]
